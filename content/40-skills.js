@@ -7,8 +7,9 @@ NM.add([
 
 { id:"conv", kind:"sub", cat:"Skills", label:"Conversational AI", parent:"skl",
   kicker:"Skills · Expert", title:"Conversational AI",
-  body:"Ten-plus years across Watson, Dialogflow, and LangGraph flows. Production systems at enterprise scale.",
-  more:"Intent design, dialog state management, fallback strategy, disambiguation, and the accuracy work that decides whether a conversational system survives contact with users.\n\nThe pattern that repeats across every platform: the interesting failures are never the ones where the model doesn't understand. They're the ones where it understands the words and gets the intent wrong — and answers anyway, fluently.\n\nEverything I know about agent reliability came from a decade of watching conversational systems fail in production.",
+  body:"Ten years in conversational AI — six of them at enterprise scale. Watson, Dialogflow, TypeScript flows, and now agent frameworks.",
+  more:"<strong>Worth separating those two numbers.</strong> I started in 2016, independently, under the brand Artificial Savant as a registered IBM Business Partner — selling and demoing chatbots and video analytics to businesses of every size. Self-directed, client-funded, and nothing like enterprise scale.\n\nEnterprise started in 2020 at Lincoln Financial, my first Fortune 250. Then Aetna and CVS Health, then ADP. Six years of that.\n\nThe first four years are why the six work. I'd built and demoed enough to sound credible in a room full of enterprise stakeholders before anyone let me near a production system serving millions of people.\n\nThe craft itself: intent design, dialog state management, fallback strategy, disambiguation, and the accuracy work that decides whether a conversational system survives contact with users.\n\nThe pattern that repeats across every platform: the interesting failures are never the ones where the model doesn't understand. They're the ones where it understands the words, gets the intent wrong, and answers anyway — fluently.",
+  foot:"2016 independent (Artificial Savant) · 2020 → enterprise",
   foot:"Watson · Dialogflow · LangGraph · TypeScript flows",
   tags:["Watson","Dialogflow","LangGraph"] },
 

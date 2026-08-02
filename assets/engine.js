@@ -775,7 +775,10 @@ function ytFacade(n) {
     dVideo.appendChild(f);
   });
 
-  dVideo.appendChild(facade);
+  /* MUST return the element — renderVideo appends it. Returning undefined
+     here threw inside showNode, which silently aborted the rest of the
+     function and left the previous node's links and chips on screen. */
+  return facade;
 }
 var dFoot   = document.getElementById("d-foot");
 var dScroll = document.getElementById("d-scroll");
@@ -788,6 +791,13 @@ function showNode(id, now) {
   var n = BY_ID[id];
   if (!n) return;
   var col = CATS[n.cat];
+
+  /* Clear every panel region up front. If anything below throws, the card
+     shows an incomplete node rather than a mix of two — a silent partial
+     render is much harder to spot than a missing section. */
+  dLinks.innerHTML = "";
+  dChips.innerHTML = "";
+  if (dVideo) dVideo.innerHTML = "";
 
   detail.style.setProperty("--accent-live", col);
   dKicker.textContent = n.kicker;
