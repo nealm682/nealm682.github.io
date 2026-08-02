@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nealm682.github.io/sitemap.xml
