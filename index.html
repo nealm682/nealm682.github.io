@@ -18,7 +18,7 @@
 <!-- Bump ?v= whenever site.css or engine.js changes. GitHub Pages caches
      assets for ~10 minutes and browsers cache them harder than HTML, so
      without this a visitor can get new markup with the old stylesheet. -->
-<link rel="stylesheet" href="assets/site.css?v=27" />
+<link rel="stylesheet" href="assets/site.css?v=28" />
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3BQS0FRV9"></script>
@@ -73,6 +73,14 @@
       <span class="t">For small business owners</span>
       <span class="ar" aria-hidden="true">→</span>
     </a>
+
+    <!-- mobile only: the reading card gets about an inch of scroll once the
+         graph, the nav strip and the CTA have taken their share. This expands
+         it to nearly the full screen and hides everything competing with it. -->
+    <button class="sheet-handle" id="sheet-handle" aria-expanded="false" aria-controls="detail">
+      <span class="grip" aria-hidden="true"></span>
+      <span class="txt">Expand for reading</span>
+    </button>
 
     <div class="detail" id="detail">
       <div class="kicker" id="d-kicker"></div>
@@ -164,5 +172,39 @@
 <script src="content/71-concepts-painted-ui.js"></script>
 
 <script src="assets/engine.js?v=26"></script>
+
+<!-- Mobile reading mode. Kept out of engine.js deliberately — this is layout
+     chrome, not motion, and engine.js shouldn't need a cache bump for it. -->
+<script>
+(function () {
+  var h = document.getElementById('sheet-handle');
+  if (!h) return;
+  var label = h.querySelector('.txt');
+
+  h.addEventListener('click', function () {
+    var on = document.body.classList.toggle('reading');
+    h.setAttribute('aria-expanded', on ? 'true' : 'false');
+    label.textContent = on ? 'Collapse' : 'Expand for reading';
+
+    /* The canvas sizes off its own box. Growing the rail shrinks the stage
+       through the grid, which fires no window resize — so the engine would
+       keep painting at the old height until something else nudged it. */
+    var t0 = Date.now();
+    (function nudge() {
+      window.dispatchEvent(new Event('resize'));
+      if (Date.now() - t0 < 480) requestAnimationFrame(nudge);
+    })();
+  });
+
+  /* Escape leaves reading mode before the engine's own Escape handling takes
+     the graph home — otherwise one key does two things at once. */
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.body.classList.contains('reading')) {
+      e.stopPropagation();
+      h.click();
+    }
+  }, true);
+})();
+</script>
 </body>
 </html>

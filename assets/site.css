@@ -68,6 +68,7 @@ body {
 
 .topbar { display: none; }
 .navstrip { display: none; }
+.sheet-handle { display: none; }   /* mobile-only; see the 820px block */
 
 /* ---------------- splitter ---------------- */
 
@@ -171,6 +172,8 @@ h1 {
   .biz-cta { animation: none; }
   .biz-cta:hover { transform: none; }
   .biz-cta:hover .ar { transform: none; }
+  /* reading mode still works, it just arrives instead of sliding */
+  .rail, .stage, .sheet-handle .grip { transition: none; }
 }
 
 /* the reading card — takes every pixel the rail can spare */
@@ -448,7 +451,44 @@ body.lab .hud.lab { display: block !important; }
     order: 3; border-right: none; border-top: 1px solid var(--outline-soft);
     padding: 0 12px calc(12px + env(safe-area-inset-bottom, 0px));
     max-height: 48dvh;
+    transition: max-height .42s cubic-bezier(.2, .7, .2, 1);
   }
+
+  /* ---- reading mode ----------------------------------------------------
+     At 48dvh, minus the CTA, the title and the chips, the actual scroll
+     region is about an inch. This trades the graph for reading space.
+     Only max-height moves: the stage sits in the 1fr row, so growing the
+     rail shrinks it through the grid with nothing else to keep in sync. */
+
+  .sheet-handle {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    width: 100%; margin: 10px 0 0; padding: 9px 12px 10px;
+    background: none; border: none; cursor: pointer;
+    font-family: var(--mono); font-size: 10px; letter-spacing: .9px;
+    text-transform: uppercase; color: var(--on-surface-dim);
+    -webkit-tap-highlight-color: transparent;
+    min-height: 40px;                       /* stays a comfortable tap target */
+  }
+  .sheet-handle .grip {
+    width: 32px; height: 4px; border-radius: 999px; background: var(--outline);
+    transition: background .2s, width .25s cubic-bezier(.2,.7,.2,1);
+  }
+  .sheet-handle:active .grip { background: var(--skl); width: 44px; }
+  .sheet-handle:focus-visible { outline: 2px solid var(--skl); outline-offset: -3px; border-radius: 10px; }
+
+  .stage { transition: opacity .42s ease; }
+
+  body.reading .rail    { max-height: 82dvh; }
+  body.reading .stage   { opacity: .16; }
+  body.reading .biz-cta { display: none; }   /* ~58px back */
+  body.reading .chips   { display: none; }   /* the pills at the bottom */
+  body.reading .sheet-handle .grip { width: 44px; background: var(--skl); }
+
+  body.reading .detail            { margin-top: 6px; padding: 12px 14px; }
+  body.reading .detail h2         { font-size: 16.5px; margin-bottom: 8px; }
+  body.reading .detail .kicker    { margin-bottom: 6px; }
+  body.reading .detail .body      { font-size: 15px; }
+  body.reading .detail .long      { font-size: 14.5px; }
   .mark, .head-row, .rail-foot { display: none; }
 
   /* the head row goes away on mobile; this deliberately doesn't. Full-width
