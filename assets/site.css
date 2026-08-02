@@ -26,6 +26,12 @@
   --cpt:  #f7a8c4;
   --core: #f2f3f5;
 
+  /* Deliberately hotter than --cpt. The node palette is muted so the graph
+     reads as one object; this has to read as an action, not a category. */
+  --biz:     #ff7eb6;
+  --biz-lit: #ffa3cc;
+  --biz-ink: #2d0c1c;
+
   --disp: 'Space Grotesk', system-ui, sans-serif;
   --body: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;
@@ -125,6 +131,47 @@ h1 {
   color: var(--on-surface-var); margin: 0 0 4px; flex: 1 1 auto;
 }
 .role b { color: var(--on-surface); font-weight: 600; }
+
+/* ---------------- small-business CTA ----------------
+   Lives between the head row and the reading card. The one element on this
+   page addressed to somebody who isn't hiring me. */
+
+.biz-cta {
+  display: inline-flex; align-items: center; gap: 9px;
+  align-self: flex-start; flex: 0 0 auto;
+  margin: 0 0 16px;
+  padding: 10px 17px;
+  border-radius: 999px;
+  background: var(--biz);
+  color: var(--biz-ink);
+  text-decoration: none;
+  font-family: var(--disp); font-weight: 600;
+  font-size: clamp(12.5px, 1.45cqi, 14.5px);
+  letter-spacing: -.2px; line-height: 1;
+  border: 1px solid var(--biz);
+  animation: bizpulse 3.6s ease-in-out infinite;
+  transition: transform .2s cubic-bezier(.2,.6,.2,1), background .2s;
+}
+.biz-cta:hover  { transform: translateY(-2px); background: var(--biz-lit); }
+.biz-cta:active { transform: translateY(0); }
+.biz-cta:focus-visible { outline: 2px solid var(--biz-lit); outline-offset: 3px; }
+.biz-cta .ar { font-size: 15px; line-height: 1; transition: transform .2s; }
+.biz-cta:hover .ar { transform: translateX(3px); }
+
+/* draws the eye once every few seconds without moving anything — the ring
+   expands out of the button rather than the button itself scaling, so it
+   never nudges the layout */
+@keyframes bizpulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,126,182,.40); }
+  55%      { box-shadow: 0 0 0 10px rgba(255,126,182,0); }
+}
+/* the engine reads this preference too — the button shouldn't be the one
+   thing on the page that ignores it */
+@media (prefers-reduced-motion: reduce) {
+  .biz-cta { animation: none; }
+  .biz-cta:hover { transform: none; }
+  .biz-cta:hover .ar { transform: none; }
+}
 
 /* the reading card — takes every pixel the rail can spare */
 .detail {
@@ -403,6 +450,13 @@ body.lab .hud.lab { display: block !important; }
     max-height: 48dvh;
   }
   .mark, .head-row, .rail-foot { display: none; }
+
+  /* the head row goes away on mobile; this deliberately doesn't. Full-width
+     pill sitting above the reading card. */
+  .biz-cta {
+    margin: 12px 0 0; width: 100%;
+    justify-content: center; padding: 12px 16px; font-size: 14px;
+  }
 
   .detail {
     border-radius: 14px; padding: 14px 16px;

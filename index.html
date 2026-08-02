@@ -18,7 +18,7 @@
 <!-- Bump ?v= whenever site.css or engine.js changes. GitHub Pages caches
      assets for ~10 minutes and browsers cache them harder than HTML, so
      without this a visitor can get new markup with the old stylesheet. -->
-<link rel="stylesheet" href="assets/site.css?v=26" />
+<link rel="stylesheet" href="assets/site.css?v=27" />
 </head>
 <body>
 
@@ -38,7 +38,6 @@
       <span>Neal Meinke</span>
     </a>
     <nav class="topnav">
-      <a href="operating-knowledge/">For Business</a>
       <a href="resume/">Résumé</a>
       <a href="notes/">Notes</a>
       <a href="https://www.linkedin.com/in/neal-meinke-40620150/">LinkedIn</a>
@@ -58,6 +57,14 @@
       <p class="role" id="ident-role"></p>
     </div>
 
+    <!-- Deliberately outside .head-row: the head row is hidden on mobile and
+         this button should survive that. Sits above the reading card at every
+         width. -->
+    <a class="biz-cta" href="operating-knowledge/">
+      <span class="t">For small business owners</span>
+      <span class="ar" aria-hidden="true">→</span>
+    </a>
+
     <div class="detail" id="detail">
       <div class="kicker" id="d-kicker"></div>
       <h2 id="d-title"></h2>
@@ -74,7 +81,6 @@
 
     <div class="rail-foot">
       <div class="links">
-        <a href="operating-knowledge/">For Business</a>
         <a href="resume/">Résumé</a>
         <a href="notes/">Notes</a>
         <a href="https://www.linkedin.com/in/neal-meinke-40620150/">LinkedIn</a>
