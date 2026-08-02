@@ -547,7 +547,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
           <circle cx="740" cy="196" r="8" fill="none" stroke="#5ad1c2" stroke-width="1.5"/>
           <path d="M727 216a13 13 0 0 1 26 0" fill="none" stroke="#5ad1c2" stroke-width="1.5"/>
         </g>
-        <text x="740" y="252" class="txt b" text-anchor="middle" style="font-size:12px">one owner</text>
+        <text x="740" y="252" class="txt b" text-anchor="middle" style="font-size:12px">owner + backup</text>
         <text x="740" y="270" class="lbl gd" text-anchor="middle">3–5 hrs / week</text>
         <path d="M574 204 H 706" stroke="#5ad1c2" stroke-width="1.4" class="flow" opacity=".8"/>
 
@@ -617,12 +617,35 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 
   <div class="note warn rv">
     <span class="tag">And it won't fire every time</span>
-    <p>The ask is an instruction, not a mechanism — the agent will usually remember, not always. That matters far less here than it would for a compliance check, because rules recur: a correction missed today gets caught the next time somebody hits the same thing. Knowledge capture needs to <em>accumulate</em>. Compliance needs to be <em>guaranteed</em>. Keeping those two apart is what stops one quietly being sold as the other.</p>
+    <p>The ask is an instruction, not a mechanism — the agent will usually remember, not always. That's acceptable here and unacceptable elsewhere, and the difference is worth being precise about, because it's the line most AI pitches blur.</p>
   </div>
+
+  <h3 class="rv" style="margin-top:44px;font-size:21px">Three kinds of obligation</h3>
+  <p class="rv" data-d="1">Not everything a system does carries the same duty. Sorting the work into these three categories before anything gets built is what decides where an instruction is sufficient and where you need a mechanism.</p>
+
+  <div class="grid g3 rv" data-d="2">
+    <div class="card live">
+      <h3><span class="pip l"></span>Discovery</h3>
+      <p style="margin-bottom:10px"><strong>Probabilistic capture is fine.</strong></p>
+      <p>Noticing a rule, catching an exception, learning which vendor is unreliable. Missing one costs you nothing permanent because rules recur — the same correction surfaces again next week. This is where the deposit loop lives.</p>
+    </div>
+    <div class="card acc">
+      <h3><span class="pip a"></span>Operating guidance</h3>
+      <p style="margin-bottom:10px"><strong>Grounded generation, then a human reads it.</strong></p>
+      <p>Drafts, summaries, comparisons, client correspondence. The layer makes these accurate far more often, and a person still signs off. Most of the day-to-day value sits here, and so does most of the time saved.</p>
+    </div>
+    <div class="card bad">
+      <h3><span class="pip b"></span>Control</h3>
+      <p style="margin-bottom:10px"><strong>Deterministic check plus required approval.</strong></p>
+      <p>Regulatory disclosures, prohibited language, mandatory approvals, records retention. A single miss is the whole problem, so these cannot rest on the model choosing to comply. They need software that runs regardless, and a named person who signs.</p>
+    </div>
+  </div>
+
+  <p class="rv small">The deposit loop is squarely in the first column. <strong>Nothing in the third column should ever be described in the same language</strong> — and if anyone tells you their assistant "checks for" a compliance requirement, the question worth asking is whether that check is a mechanism or a request.</p>
 
   <div class="note rv">
     <span class="tag">The governing rule</span>
-    <p>Capture is automatic; acceptance never is. Every one of these four paths ends in the same queue, and one named person decides what becomes true. That distinction is what separates a layer that gets better from one that fills up with sixty contradictory opinions — which is a different failure than going stale, and not a better one.</p>
+    <p>Capture is automatic; acceptance never is. Every one of these four paths ends in the same queue, and a named reviewer decides what becomes true. That distinction is what separates a layer that gets better from one that fills up with sixty contradictory opinions — which is a different failure than going stale, and not a better one.</p>
   </div>
 </section>
 
@@ -735,7 +758,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
         <rect x="60" y="230" width="780" height="82" rx="16" fill="url(#lay)" stroke="rgba(56,189,248,.4)"/>
         <text x="450" y="262" class="txt b" text-anchor="middle" style="font-size:14px">The company layer — shared and governed</text>
         <text x="450" y="284" class="txt" text-anchor="middle">how the firm works · compliance rules · service standards · vendors · procedures</text>
-        <text x="450" y="303" class="lbl hi" text-anchor="middle">everyone reads · changes go through one owner</text>
+        <text x="450" y="303" class="lbl hi" text-anchor="middle">everyone reads · changes go through the reviewer</text>
       </svg>
     </div>
     <div class="fig-cap">
@@ -747,7 +770,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <div class="steps rv">
     <div class="stp">
       <h3>The company layer</h3>
-      <p>Shared and governed. How the firm works, what the rules are, the standards, the vendors, the procedures everyone follows. People read from it; changes route through one owner.</p>
+      <p>Shared and governed. How the firm works, what the rules are, the standards, the vendors, the procedures everyone follows. People read from it; changes route through a named reviewer.</p>
     </div>
     <div class="stp">
       <h3>The personal layer</h3>
@@ -763,7 +786,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 <!-- ══════════════ THE PLUMBING ══════════════ -->
 <section>
   <div class="eyebrow rv">How it's actually wired</div>
-  <h2 class="rv" data-d="1">One person touches<br />the machinery</h2>
+  <h2 class="rv" data-d="1">Almost nobody touches<br />the machinery</h2>
   <p class="rv" data-d="2">Two constraints shape the whole build. Nobody producing work should ever see a repository or learn a developer tool. And nobody producing work should ever be able to edit shared truth directly, because sixty people with write access to the same files produces sixty versions of the truth inside a quarter.</p>
   <p class="rv" data-d="2">Both are satisfied by a single rule: <strong>producers only ever create new files. They never edit existing ones.</strong> Everything else follows from that.</p>
 
@@ -785,6 +808,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
     └── <span class="f">2026-08-03-dana-photo-turnaround.md</span></div>
 
   <p class="rv">New files never collide with each other, which quietly removes every problem you'd otherwise have with sixty people writing at once. No locking, no conflicts, no last-write-wins data loss. The append-only inbox is the entire trick.</p>
+
+  <p class="rv"><strong>Append-only applies to the inbox, not to the knowledge itself.</strong> Worth stating plainly, because it's an easy thing to over-apply. The wiki has to be fully editable by the reviewer — rules get corrected, superseded, and sometimes deleted outright, and a body of knowledge that can only ever be added to stops being an operating manual and becomes an archive. Version control gives you the history; the current page still has to say what's true today and nothing else.</p>
 
   <div class="fig rv" data-d="2">
     <div class="fig-head">
@@ -825,7 +850,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 
         <!-- admin -->
         <rect x="755" y="90" width="125" height="110" rx="15" fill="#16181c" stroke="rgba(90,209,194,.45)"/>
-        <text x="817" y="120" class="txt b" text-anchor="middle" style="font-size:12.5px">one owner</text>
+        <text x="817" y="120" class="txt b" text-anchor="middle" style="font-size:12.5px">owner + backup</text>
         <text x="817" y="140" class="txt" text-anchor="middle" style="font-size:11.5px">reviews · decides</text>
         <text x="817" y="157" class="txt" text-anchor="middle" style="font-size:11.5px">commits · publishes</text>
         <text x="817" y="182" class="lbl gd" text-anchor="middle">3–5 hrs/wk</text>
@@ -882,12 +907,14 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 
   <div class="grid g2 rv">
     <div class="card live">
-      <h3><span class="pip l"></span>Rejected proposals leave no trace</h3>
-      <p>Because the inbox sits outside the repository, only reviewed and accepted material is ever committed. A proposal that contained a client's details, or was simply wrong, is deleted — it never enters permanent history. That matters more than it sounds: version history is excellent at remembering and very bad at forgetting.</p>
+      <h3><span class="pip l"></span>Rejected proposals stay out of the record</h3>
+      <p>Because the inbox sits outside the repository, only reviewed and accepted material is ever committed. A proposal that contained a client's details, or was simply wrong, is deleted rather than preserved — it never enters the permanent knowledge record. Version history is excellent at remembering and very bad at forgetting, so keeping the gate <em>in front of</em> it rather than behind it is the whole point.</p>
+      <p style="margin-top:10px;font-size:13px;color:var(--mute)">To be precise, since this is a privacy claim: that means no permanent trace <em>in the knowledge repository</em>. Ordinary application and security logs are a separate matter, governed by your existing retention policy, and are part of the data-flow document rather than something this design changes.</p>
     </div>
     <div class="card live">
       <h3><span class="pip l"></span>Two roles, two different tools</h3>
-      <p>Producers get a desktop agent pointed at a folder — no repository, no accounts, nothing to learn. The one owner gets a developer-grade agent that can read history, write commits and manage the repository. Same knowledge, two entirely different surfaces, matched to who's actually sitting there.</p>
+      <p>Producers get a desktop agent pointed at a folder — no repository, no accounts, nothing to learn. The reviewers get a developer-grade agent that can read history, write commits and manage the repository. Same knowledge, two entirely different surfaces, matched to who's actually sitting there.</p>
+      <p style="margin-top:10px"><strong>Two people hold that second role, not one.</strong> A primary who works the queue and a backup who can cover a holiday, an illness, or a resignation. One reviewer is a single point of failure sitting directly on top of the thing you paid to build.</p>
     </div>
   </div>
 

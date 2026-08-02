@@ -101,6 +101,18 @@ The names I use for myself are engineering names. "Harness" and "wiki" will lose
 
 `[OPEN]` **Enforcement mechanism is unresolved.** The hook surface in a desktop/Cowork deployment is thinner than in Claude Code, and I have not verified what's actually enforceable versus merely instructed for non-technical seats. If some guardrails degrade to strongly-worded instructions, I need to say so plainly rather than let a principal believe something is enforced when it isn't. **This must be resolved before the first paid engagement.** Selling a compliance guarantee I can't deliver is the fastest way to end this business.
 
+#### 2.4.1 Three tiers of obligation
+
+Not every output carries the same duty, and conflating them is what makes AI pitches sound dishonest to anyone technical. Every workflow gets sorted into one of these before it's built:
+
+| Tier | Standard | Where it lives |
+|---|---|---|
+| **Discovery** | Probabilistic capture is acceptable | The deposit loop. Missing one costs nothing permanent, because rules recur. |
+| **Operating guidance** | Grounded generation, then human review | Drafts, summaries, comparisons, correspondence. Most of the day-to-day value. |
+| **Control** | Deterministic check plus required approval | Regulatory disclosure, prohibited language, mandatory approvals, retention. A single miss is the whole problem. |
+
+The commitment that follows: **nothing in the Control tier is ever described in Discovery-tier language.** This is also the sorting exercise that makes the §2.4 open question tractable — I only need real enforcement for the third tier, which is a much smaller surface than "everything."
+
 ### 5 · Written Plans *(spec-driven)*
 
 **The claim:** An agent that hits an unspecified decision won't stop and ask. It will invent a plausible answer and keep going.
@@ -119,6 +131,12 @@ The names I use for myself are engineering names. "Harness" and "wiki" will lose
 - **Client-facing.** A visual one-pager the practitioner sends their own client. This is a *product* the firm gets, not just internal plumbing, and it's the element most likely to surprise a prospect in a good way.
 
 The second use is worth more than the first commercially and I have been under-selling it.
+
+**Non-negotiable design rule: explainers are compiled, never maintained.** The obvious approach — write the wiki page, then build the explainer, then encode the skill, then draft the checklist — produces four surfaces carrying the same rule, and they will disagree within a quarter. That is the decay problem this whole offering exists to solve, reintroduced through the back door and made worse, because now every disagreeing artefact looks authoritative.
+
+So the canonical entry carries structured fields — rule, rationale, examples, exceptions, provenance, effective date, owner, sensitivity class — and every downstream surface is *generated* from it: wiki page, skill, explainer, checklist, onboarding lesson. Generated files are disposable, marked as generated, and regenerated often enough that hand edits get overwritten visibly.
+
+This is also the clearest answer to "what is the retainer actually for." Maintenance is one entry plus a recompile, not four documents — which is defensible, and gets cheaper per rule as the library grows.
 
 ---
 
@@ -225,6 +243,10 @@ The right person usually already exists as the person everybody asks when they d
 
 Required traits: knows the operative rules · respected enough to arbitrate a disagreement about what's true · has 3–5 hours a week that can actually be freed · is not so senior that this is beneath them or so junior that it's above them.
 
+**Two people, not one — primary and backup.** A single owner is a single point of failure sitting directly on top of the asset the client just paid to build. They take holidays, they get ill, and eventually they resign. The backup doesn't need to work the queue weekly; they need to have done it enough that a fortnight's absence isn't a fortnight's decay. In practice this is usually the operations lead as primary with the principal as backup — the principal won't sustain the routine, but they can absolutely cover it and they benefit from seeing the queue occasionally.
+
+Both names go in the build-stage gate at §5.3, not just the first.
+
 ### 5.2 Three ownership models
 
 | Model | Fit | Trade-off |
@@ -237,7 +259,7 @@ The hybrid is the honest recommendation and also the best commercial structure �
 
 ### 5.3 Make it a gate
 
-**Naming the context owner is a precondition of the build stage, not a nice-to-have.** If a firm won't name one and won't pay me to be one, I should decline the build. Taking that engagement means selling something I know will fail in six months.
+**Naming the context owner *and their backup* is a precondition of the build stage, not a nice-to-have.** If a firm won't name them and won't pay me to be one, I should decline the build. Taking that engagement means selling something I know will fail in six months.
 
 ---
 
@@ -275,7 +297,7 @@ The cohort becomes the internal champions for rollout. Choosing them is a politi
 
 Full firm knowledge base · complete procedure library · guardrails deployed · rollout to all practitioners in waves, not at once · context owner training and handover · explainer library for training and client-facing use.
 
-**Gate:** named context owner (§5.3), and the §4.4 distribution question resolved.
+**Gate:** named context owner *and backup* (§5.3), and the §4.4 distribution question resolved.
 
 ### Stage 3 — Maintenance retainer *(monthly, ongoing)*
 
