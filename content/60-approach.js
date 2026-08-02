@@ -57,6 +57,21 @@ NM.add([
   body:"Animation- and graphic-rich single-page files generated from the wiki, explaining a concept, a detail, or a status — illustrations, animations, dropdowns, video.",
   more:"Two uses, and the second is the one people miss.\n\n<strong>Learning.</strong> I'm a visual learner. A plan or a concept lands faster as an illustrated, animated page than as prose, so I build one when I need to actually absorb something rather than skim it.\n\n<strong>Auditing comprehension.</strong> Reviewing a visual explanation of the plan exposes whether the agent genuinely understood the task. A misunderstanding can hide comfortably inside a well-written paragraph. It cannot hide in a diagram — the boxes are either in the right places or they aren't.\n\nSo it's a proof mechanism, not a presentation format. This page is one of them.",
   foot:"Learn from it · and use it to check the agent's comprehension",
-  tags:["Visual learning","Verification","Accessibility"] }
+  tags:["Visual learning","Verification","Accessibility"] },
+
+/* The six above are how I work. This one is what happens when a company runs
+   the same system — deliberately not numbered, because it's the consequence
+   of the six rather than a seventh element. */
+{ id:"company", kind:"sub", cat:"Approach", label:"At Company Scale", parent:"app",
+  kicker:"Approach · At company scale",
+  title:"Six elements for one person is a productivity tool",
+  body:"Run the same system across a whole company and something different happens: the deposits are made by many people and the extractions are made by many people, and they aren't the same people.",
+  more:"On one person this compounds, but the ceiling is however much that person does. At company level the mechanism changes.\n\n<strong>The layer has to run both directions.</strong> Everyone designs for extraction — ask a question, get an answer grounded in how the company works. Almost nobody designs for deposit, which is what makes the other direction survive. An experienced person doing real work through the harness leaves evidence: the exception they made, the threshold they applied, the vendor who let them down. That material is produced whether or not anyone intended to produce it.\n\n<strong>Which is the answer to why every company wiki dies.</strong> Not laziness — bad incentives. The person with the knowledge pays the cost of writing it down and someone else receives the benefit. Any system built on that decays to the rate at which people voluntarily do unpaid work. Make the deposit a byproduct of the job and there's nothing left to skip.\n\n<strong>What it doesn't solve.</strong> Capture is mechanical; deciding which of two contradictory things is now true is judgment, and somebody at the company has to own it. If nobody does, the layer accumulates contradictions instead of going stale — a different failure, not a better one.\n\nThe band where this matters most is roughly 20 to 100 people. Below that the owner knows everything and you can just ask them.",
+  foot:"Extract and deposit · the company layer and the personal one",
+  links:[
+    {label:"The visual explainer — for business owners", url:"operating-knowledge/", primary:true},
+    {label:"The long version — Why Your Company Wiki Died", url:"notes/company-harness/"}
+  ],
+  tags:["Institutional knowledge","Small business","Two-way layer"] }
 
 ]);

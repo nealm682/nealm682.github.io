@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Why Your Company Wiki Died — Neal Meinke</title>
+<meta name="description" content="Every company has a graveyard of abandoned wikis. The reason isn't laziness — it's that documenting is a cost paid by someone who gains nothing from it. What changes when the deposit becomes a byproduct of the work." />
+<meta property="og:title" content="Why Your Company Wiki Died" />
+<meta property="og:description" content="Documentation loses to the work, every time. Unless depositing knowledge stops being a separate chore. An interactive look at the two-way layer." />
+<meta property="og:type" content="article" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../assets/notes.css" />
+</head>
+<body>
+<div class="glow"></div>
+<div class="glow2"></div>
+
+<nav class="nav">
+  <a class="brand" href="../">neal<span>/</span>notes</a>
+  <a href="../">← all notes</a>
+</nav>
+
+<main class="shell">
+
+  <div class="eyebrow">Note 02 · Operating Model</div>
+  <h1>Why your company<br />wiki died</h1>
+  <p class="lede">Somewhere in your shared drive is a folder that was going to fix this. Someone built it, everyone agreed to keep it current, and it was accurate for about five weeks. That failure is structural, not cultural — and it's the thing standing between a small company and AI that's actually worth having.</p>
+
+  <div class="meta">
+    <span><span class="dot"></span>Published 2026-08-02</span>
+    <span>~10 min read</span>
+    <span>Interactive ×2</span>
+  </div>
+
+  <p>The previous note argued that AI in a business is only as good as the written account of how that business works — and it ended on an uncomfortable finding: that account goes stale fast. Eighteen months of ordinary change is enough to make a carefully built context layer actively misleading.</p>
+
+  <p>Which raises the obvious objection, and it's the one I get every time I describe this to an owner:</p>
+
+  <blockquote>"We've tried this. We built a wiki. Nobody updated it."</blockquote>
+
+  <p>That's not an objection I can argue with, because it's true nearly everywhere. So this note is about the only version of the answer I've found that survives contact with a real company.</p>
+
+  <h2>Documentation loses to the work. Always.</h2>
+
+  <p>The standard diagnosis is a discipline problem — people are busy, people are lazy, we need to hold the team accountable. Every company that reaches that diagnosis tries the same three fixes: a mandate, a template, and a recurring calendar reminder. All three fail, and they fail in a predictable order.</p>
+
+  <p>They fail because the incentive is upside down. <strong>The person who has the knowledge pays the cost of writing it down, and someone else — usually someone who hasn't been hired yet — receives the benefit.</strong> That's not laziness. That's a rational response to a tax with no rebate.</p>
+
+  <p>It gets worse the more valuable the person is. Your best estimator, your most experienced agent, the operations person who knows what to do when the vendor misses a date — these are exactly the people whose time is most expensive and whose knowledge is most worth capturing. The documentation tax falls hardest on precisely the people who can least afford to pay it.</p>
+
+  <div class="callout">
+    <span class="tag">The structural version</span>
+    <p>Any system that requires people to do a second, separate job in order to capture what they learned during the first job will decay to the rate at which people voluntarily do unpaid work. That rate is not zero, but it is close enough to zero that you should plan as if it were.</p>
+  </div>
+
+  <p>So the question isn't how to make people document more. It's whether the deposit can stop being a separate act at all.</p>
+
+  <h2>What a harness actually is</h2>
+
+  <p>The word I use for this is a <em>harness</em>, which is engineering vocabulary, so here it is in plain terms.</p>
+
+  <p>Most companies that adopt AI give people a chat window. The employee copies something out of a system, pastes it into the chat, gets an answer, and pastes the answer back. The AI never touches the business. It's a very articulate stranger you consult on your lunch break.</p>
+
+  <p>A harness is the opposite arrangement: <strong>the assistant is connected to the systems the work actually lives in</strong> — email, the file store, the CRM, the calendar, whatever the industry-specific system of record is — and the employee does the work <em>through</em> it rather than beside it. Not "ask the AI about the proposal." Draft the proposal in the place where the client history, the pricing rules, and the last four proposals already are.</p>
+
+  <p>That distinction sounds like a convenience feature. It isn't. It's the thing that makes the deposit possible, and here's why.</p>
+
+  <h2>The layer has to run in both directions</h2>
+
+  <p>Almost everyone who thinks about AI and company knowledge thinks about one direction: the employee <em>pulls</em>. They ask a question, the system answers from what the company knows. Extraction. That's the demo, that's what gets bought, and on its own it decays exactly the way your wiki did.</p>
+
+  <p>The direction nobody designs for is the other one. When an experienced person does a piece of work through the harness, they leave evidence — a judgment call, an exception, a rule they applied that isn't written anywhere, a vendor who let them down, a phrasing that worked. <strong>All of that is deposit material, and it's produced whether or not anyone intends to produce it.</strong></p>
+
+  <div class="cols">
+    <div class="col-card good">
+      <h4>Extract — what the employee gets</h4>
+      <ul>
+        <li>Answers grounded in how <em>this</em> company works</li>
+        <li>Recurring documents produced to the firm's standard, not from scratch</li>
+        <li>Rules and thresholds applied without having to remember them</li>
+        <li>A new hire operating at month-six competence in week two</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h4 style="color:var(--accent)">Deposit — what the company gets</h4>
+      <ul>
+        <li>The exception that experienced person made, and why</li>
+        <li>A decision rule that existed only in someone's head</li>
+        <li>Which vendor, which client, which route actually worked</li>
+        <li>Knowledge that stays when the person doesn't</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>The second column is the one that pays for the whole thing, and it is invisible on day one. That's the hard part of selling it and the reason most implementations stop at column one.</p>
+
+  <p>Click through a few ordinary work tasks below and watch what accumulates. Then flip the mode.</p>
+
+  <!-- ============ INTERACTIVE 1 ============ -->
+  <div class="fig">
+    <div class="fig-head">
+      <span class="t">The Deposit Loop</span>
+      <span class="h">Interactive</span>
+    </div>
+    <div class="fig-body">
+
+      <div class="toggle-list" style="margin-bottom:16px">
+        <div class="tgl on" id="mode-tgl">
+          <div class="box">
+            <svg width="10" height="10" viewBox="0 0 12 12" aria-hidden="true">
+              <path d="M1.5 6.2 L4.4 9 L10.5 2.6" stroke="#06181f" stroke-width="2"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="lbl">
+            <b id="mode-name">Deposit is a byproduct of the work</b>
+            <i id="mode-sub">The work happens through the harness, so capture is automatic. Turn this off to simulate documentation as a separate chore.</i>
+          </span>
+        </div>
+      </div>
+
+      <div style="font-family:var(--mono);font-size:10.5px;color:var(--text-mute);
+                  letter-spacing:.6px;text-transform:uppercase;margin-bottom:9px">
+        An employee does a piece of work — click any
+      </div>
+      <div id="tasks" style="display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px"></div>
+
+      <div class="answer" style="min-height:186px">
+        <div class="q">What the company now knows</div>
+        <div id="layer"></div>
+      </div>
+
+      <div class="meter-row">
+        <span class="name">Coverage</span>
+        <span class="meter"><i id="m-cov"></i></span>
+        <span class="val" id="v-cov">0</span>
+      </div>
+      <div class="meter-row">
+        <span class="name">Effort cost</span>
+        <span class="meter"><i id="m-eff"></i></span>
+        <span class="val" id="v-eff">0</span>
+      </div>
+
+      <div style="margin-top:16px">
+        <button id="reset" style="font-family:var(--mono);font-size:11px;color:var(--text-mute);
+          background:var(--bg-elev-2);border:1px solid var(--line);border-radius:8px;
+          padding:7px 13px;cursor:pointer">reset</button>
+      </div>
+    </div>
+    <div class="fig-cap">
+      In chore mode the tasks still get done — the work always gets done. What changes is that
+      roughly one in six produces a durable record, because someone had to choose to stop and
+      write it. That ratio is generous. The effort meter is the reason: in byproduct mode the
+      deposit costs nothing extra, so there's nothing to skip.
+    </div>
+  </div>
+
+  <h2>So how does it get out of their heads</h2>
+
+  <p>Two assumptions come up here, and both are wrong. It isn't one place everyone has to work out of — ask semi-autonomous people to change where they work and adoption is finished before it starts. And it isn't knowledge-transfer assignments, which is the chore that already failed. <strong>Nobody writes a document at any point in this.</strong></p>
+
+  <p>Four mechanisms do the actual work, and they run at different times.</p>
+
+  <p><strong>Structured interviews</strong> are the front load, and there's a technique that decides whether they're worth anything. Experts can't tell you what they know — the rule became automatic years ago, so they don't experience it as a rule. Ask "what are our pricing rules" and you get platitudes. Ask "walk me through the last four quotes you sent" and the rules fall out of the cases, including ones they'd have denied having. Cases, never abstractions.</p>
+
+  <p><strong>Mining existing work</strong> — the last fifty proposals, a few hundred client emails — drafts the rules far faster than asking. But old files hold the current policy and the 2019 one nobody deleted, with nothing marking which is which, so everything mined is a candidate that goes back to a human. Skip that and you've automated the spread of stale truth.</p>
+
+  <p><strong>The moment of correction</strong> is the one that makes it compound. Someone gets a draft that's ninety percent right and fixes the last ten. That correction is the deposit — precise, tied to a real case, and free, because they were fixing it anyway. The system asks one question about the change and it takes one click to answer. This is what keeps it alive after the initial build.</p>
+
+  <p><strong>The exception moment</strong> is the densest knowledge a company produces and almost nobody captures it. When someone escalates, waives something, or overrides a default, an undocumented rule is surfacing in real time. You ask while the reasoning is still loaded, or you don't get it.</p>
+
+  <p>All four end in the same place: a queue, as candidates. One named person decides what becomes true. Capture is automatic; acceptance never is.</p>
+
+  <h2>Why this only works at company level</h2>
+
+  <p>I've run this setup on my own work for about two years. On one person it's a productivity tool — useful, but the compounding is bounded by how much one person does.</p>
+
+  <p>At company level something different happens, and it's worth being precise about what: <strong>the deposits are made by many people and the extractions are made by many people, but they're not the same people.</strong> The estimator's judgment call gets deposited on Tuesday and shows up in a new hire's draft on Thursday. That transfer used to require the two of them to be in a room together, and it used to only happen by luck.</p>
+
+  <p>That's the actual mechanism behind every claim people make about institutional knowledge. Not "AI makes everyone faster" — although it does. The claim worth paying for is that <em>your good people's judgment becomes available to everyone, continuously, without anyone scheduling a training session.</em></p>
+
+  <div class="callout">
+    <span class="tag">The size where this matters</span>
+    <p>Under about 20 people, the owner is usually the only real knowledge holder and everyone can just ask them. Over about 100, you have an IT function and a procurement process and a different set of problems. The band in between — where the knowledge is genuinely distributed, genuinely undocumented, and there's nobody whose job is to fix that — is where this changes the most.</p>
+  </div>
+
+  <p>Here's the same twenty-four months from the previous note, with the deposit loop running.</p>
+
+  <!-- ============ INTERACTIVE 2 ============ -->
+  <div class="fig">
+    <div class="fig-head">
+      <span class="t">Twenty-four months, three regimes</span>
+      <span class="h">Interactive</span>
+    </div>
+    <div class="fig-body">
+      <div class="slider-wrap">
+        <input type="range" id="months" min="0" max="24" value="0" step="1" />
+        <div class="slider-labels">
+          <span>Month 0</span>
+          <span id="month-label">Month 0</span>
+          <span>Month 24</span>
+        </div>
+      </div>
+
+      <div class="meter-row">
+        <span class="name">No layer</span>
+        <span class="meter"><i id="m-r0"></i></span>
+        <span class="val" id="v-r0">0</span>
+      </div>
+      <div class="meter-row">
+        <span class="name">Chore</span>
+        <span class="meter"><i id="m-r1"></i></span>
+        <span class="val" id="v-r1">0</span>
+      </div>
+      <div class="meter-row">
+        <span class="name">Byproduct</span>
+        <span class="meter"><i id="m-r2"></i></span>
+        <span class="val" id="v-r2">0</span>
+      </div>
+
+      <div id="events" style="margin-top:18px"></div>
+    </div>
+    <div class="fig-cap">
+      Trustworthy coverage — the share of questions the layer answers correctly rather than
+      confidently wrong. The chore line is the one to look at: it starts highest, because a
+      freshly built wiki really is good, and it's overtaken inside a year. That crossover is
+      why "we tried this already" is both true and not an argument against trying again.
+    </div>
+  </div>
+
+  <h2>What this doesn't solve</h2>
+
+  <p>Worth saying plainly, because the version of this argument that skips it is a sales pitch rather than a description.</p>
+
+  <p><strong>Deposit is not curation.</strong> Capturing what happened is mechanical. Deciding which of two contradictory things is now true is a judgment call, and no amount of automatic capture makes it. Somebody at the company has to own that — arbitrating what's true when the layer disagrees with itself, retiring things that got superseded, deciding what's firm policy versus one person's habit. It's three to five hours a week and it usually belongs to whoever people already go to when they don't know the rule.</p>
+
+  <p>If nobody is given that job, the layer accumulates contradictions instead of decaying into staleness. That's a different failure but it isn't a better one. <strong>The honest version of this offer includes naming that person, and I'd rather walk away from an engagement than pretend the software covers it.</strong></p>
+
+  <p><strong>And it won't run itself on day one.</strong> The first pass of getting what's in people's heads into a usable form is interview work — sitting with the experienced people and asking the questions that surface the rules they don't know they're following. That part is labor, it takes weeks not days, and anyone who tells you it's a software install is selling you the demo.</p>
+
+  <h2>Contractors, and who owns what</h2>
+
+  <p>A lot of companies this size don't run on employees. Real estate brokerages, insurance agencies, staffing firms, agencies of most kinds — the producers are independent contractors with their own books of business. It changes the design in a way that's easy to get wrong and expensive to get wrong.</p>
+
+  <p>You cannot quietly hoover a contractor's client relationships into a company asset. Beyond whatever their agreement says about it, the moment people suspect that's happening they stop being candid, and candor is the entire input to the deposit loop. One misstep here and you've killed the thing you were building.</p>
+
+  <p>So the layer has to be split, deliberately and visibly:</p>
+
+  <div class="steps">
+    <div class="step">
+      <h3>The company layer</h3>
+      <p>Shared and governed. How this firm works, what the compliance rules are, service standards, vendor lists, the procedures everyone follows. People read from it; changes go through the person who owns it. Sixty people with edit access to ground truth produces sixty versions of ground truth inside a quarter.</p>
+    </div>
+    <div class="step">
+      <h3>The personal layer</h3>
+      <p>Theirs. Their clients, their territory, their voice, their active work. Private by default. Deliberately thin, because every minute a producer spends maintaining it is a minute they resent.</p>
+    </div>
+    <div class="step">
+      <h3>The promotion boundary</h3>
+      <p>Things move from personal to company only on purpose, with the person's knowledge. Never silently. This is the rule that makes the whole thing survivable — and it's the one worth writing down before anything gets built.</p>
+    </div>
+  </div>
+
+  <h2>Where I'd start</h2>
+
+  <p>Not with a rollout. The first thing worth knowing is whether there's anything in your people's heads worth extracting, and you find that out by extracting some of it — picking a handful of people across experience levels, taking three workflows they do every week, and building the first version of the layer around those. Three or four weeks. At the end you know what the full thing costs, because you've done a real sample of it rather than estimated one.</p>
+
+  <p>That's also the honest test of whether this is for you. If the sample doesn't produce anything your team recognizes as valuable, the full build won't either, and you've spent a month instead of a year finding that out.</p>
+
+  <div class="callout warn">
+    <span class="tag">Probably not for you if</span>
+    <p>Your systems can't be connected to — everything downstream degrades back to a chat window. Nobody can be freed for a few hours a week to own what's true. Or you're hoping to reduce headcount, in which case the people whose knowledge you need will read the room correctly and tell you nothing useful.</p>
+  </div>
+
+  <hr />
+
+  <div class="foot">
+    <div class="name">Neal Meinke</div>
+    <p>I build AI systems inside businesses — context layers, system integrations, and internal tools that replace manual work. Day job is enterprise AI assistants at Fortune 500 scale; these notes are the methods, generalized down to companies where one person still knows everything.</p>
+    <p>If you're running a company somewhere in that 20–100 band and this describes a problem you actually have, I'm happy to talk it through — including telling you if I don't think it's worth doing.</p>
+    <p><a href="mailto:nealm682@gmail.com">nealm682@gmail.com</a> · <a href="https://www.linkedin.com/in/neal-meinke-40620150/">LinkedIn</a> · <a href="https://github.com/nealm682">GitHub</a></p>
+    <p style="margin-top:22px">
+      <a href="../../operating-knowledge/">See the visual version of this argument →</a><br />
+      <a href="../context-layer/">← Note 01 · The Context Layer</a>
+    </p>
+  </div>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+
+  function colorFor(v) {
+    if (v >= 70) return "var(--live)";
+    if (v >= 40) return "var(--warn)";
+    return "var(--bad)";
+  }
+  function setBar(name, val) {
+    var bar = document.getElementById("m-" + name);
+    var txt = document.getElementById("v-" + name);
+    if (!bar) return;
+    bar.style.width = Math.max(0, Math.min(100, val)) + "%";
+    bar.style.background = colorFor(val);
+    txt.textContent = Math.round(val);
+  }
+
+  /* ================= INTERACTIVE 1 — DEPOSIT LOOP ================= */
+
+  var TASKS = [
+    { id:"quote",   label:"Quote a job",
+      dep:"Rush pricing: the 15% surcharge is waived for accounts past 3 years — nowhere in the price list." },
+    { id:"complaint", label:"Handle a complaint",
+      dep:"Escalation route: damaged-in-transit goes to the carrier claim first, not to a credit." },
+    { id:"onboard", label:"Onboard a client",
+      dep:"Intake: this client type needs the compliance form before the kickoff call, not after." },
+    { id:"vendor",  label:"Chase a late vendor",
+      dep:"Vendor reality: Kessler quotes 5 days and delivers in 9. Everyone quietly pads it." },
+    { id:"proposal",label:"Write a proposal",
+      dep:"House style: lead with the timeline, never with the price. Wins noticeably more." },
+    { id:"exception", label:"Approve an exception",
+      dep:"Threshold: discounts past 12% need the owner. Under that, the lead decides." },
+    { id:"handoff", label:"Hand off to a colleague",
+      dep:"Handoff gap: the site-access detail lives in someone's inbox and is missed every time." },
+    { id:"renewal", label:"Run a renewal",
+      dep:"Timing: renewal conversations at 60 days out close far better than at 30." }
+  ];
+
+  var done = {};
+  var byproduct = true;
+  var choreCount = 0;
+
+  var elTasks = document.getElementById("tasks");
+  var elLayer = document.getElementById("layer");
+  var elMode  = document.getElementById("mode-tgl");
+
+  function buildTasks() {
+    elTasks.innerHTML = "";
+    TASKS.forEach(function (t) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.dataset.id = t.id;
+      b.textContent = t.label;
+      b.style.cssText =
+        "font-family:var(--body);font-size:13px;cursor:pointer;" +
+        "background:var(--bg-elev-2);border:1px solid var(--line-soft);" +
+        "border-radius:999px;padding:7px 13px;transition:border-color .18s,color .18s;" +
+        "color:" + (done[t.id] ? "var(--text-mute)" : "var(--text)");
+      if (done[t.id]) b.style.borderColor = "rgba(56,189,248,.35)";
+      b.addEventListener("click", function () { doTask(t); });
+      elTasks.appendChild(b);
+    });
+  }
+
+  function doTask(t) {
+    if (done[t.id]) return;
+    if (byproduct) {
+      done[t.id] = true;
+    } else {
+      choreCount++;
+      /* documenting is a separate act — roughly one in six actually happens */
+      done[t.id] = (choreCount % 6 === 0);
+      if (!done[t.id]) { flashSkip(t); buildTasks(); render(); return; }
+    }
+    buildTasks();
+    render();
+  }
+
+  var skipMsg = null;
+  function flashSkip(t) {
+    skipMsg = "“" + t.label + "” got done. Nobody wrote anything down — " +
+              "there was another one waiting.";
+  }
+
+  function render() {
+    var kept = TASKS.filter(function (t) { return done[t.id]; });
+    var attempted = byproduct
+      ? Object.keys(done).length
+      : choreCount;
+
+    if (!kept.length) {
+      elLayer.innerHTML =
+        '<p style="font-size:13.5px;color:var(--text-mute);margin:0">' +
+        (skipMsg
+          ? '<span style="color:var(--bad)">' + skipMsg + '</span>'
+          : 'Nothing captured yet. Click a task above.') + '</p>';
+    } else {
+      elLayer.innerHTML =
+        (skipMsg && !byproduct
+          ? '<div style="font-size:13px;color:var(--bad);padding-bottom:10px;' +
+            'margin-bottom:10px;border-bottom:1px dashed var(--line)">' + skipMsg + '</div>'
+          : '') +
+        kept.map(function (t) {
+          return '<div style="display:flex;gap:11px;align-items:baseline;padding:8px 0;' +
+                 'border-bottom:1px solid var(--line-soft);font-size:13.5px">' +
+                 '<span style="font-family:var(--mono);font-size:10px;color:var(--accent);' +
+                 'flex:0 0 78px;letter-spacing:.4px">CAPTURED</span>' +
+                 '<span style="color:var(--text-dim)">' + t.dep + '</span></div>';
+        }).join("");
+    }
+
+    var cov = (kept.length / TASKS.length) * 100;
+    var eff;
+    if (byproduct)      eff = kept.length ? 6 : 0;
+    else                eff = Math.min(100, attempted * 11);
+
+    setBar("cov", cov);
+    setBar("eff", eff);
+  }
+
+  function setMode(on) {
+    byproduct = on;
+    elMode.classList.toggle("on", on);
+    document.getElementById("mode-name").textContent = on
+      ? "Deposit is a byproduct of the work"
+      : "Deposit is a separate chore";
+    document.getElementById("mode-sub").textContent = on
+      ? "The work happens through the harness, so capture is automatic. Turn this off to simulate documentation as a separate chore."
+      : "The work still gets done. Writing it up is an extra step someone has to choose to take — and mostly doesn't.";
+    reset();
+  }
+
+  function reset() {
+    done = {}; choreCount = 0; skipMsg = null;
+    buildTasks(); render();
+  }
+
+  elMode.addEventListener("click", function () { setMode(!byproduct); });
+  document.getElementById("reset").addEventListener("click", reset);
+
+  /* ================= INTERACTIVE 2 — THREE REGIMES ================= */
+
+  var EVENTS = [
+    { m:3,  t:"Pricing changes. The layer that isn't fed by the work doesn't hear about it." },
+    { m:5,  t:"Your most experienced person leaves." },
+    { m:8,  t:"New service line launches — described nowhere." },
+    { m:11, t:"Two new hires start. What they can reach decides their ramp." },
+    { m:14, t:"Main vendor is replaced; every lead time shifts." },
+    { m:18, t:"The original wiki author moves on. Nobody inherits it." },
+    { m:22, t:"A second location opens with different rules." }
+  ];
+
+  var slider = document.getElementById("months");
+  var mLabel = document.getElementById("month-label");
+  var elEv   = document.getElementById("events");
+
+  function renderRegimes() {
+    var m = parseInt(slider.value, 10);
+    mLabel.textContent = "Month " + m;
+    var past = EVENTS.filter(function (e) { return e.m <= m; }).length;
+
+    /* no layer: flat and low — people ask whoever's around */
+    var r0 = 30 - past * 1.4;
+
+    /* chore: starts high, decays with every unrecorded change */
+    var r1 = 88 - past * 9.5 - m * 0.7;
+
+    /* byproduct: starts lower (it hasn't seen much work yet), climbs as
+       work flows through it, dips at each event then recovers */
+    var r2 = 46 + m * 2.6 - past * 2.2;
+
+    setBar("r0", Math.max(6, r0));
+    setBar("r1", Math.max(8, r1));
+    setBar("r2", Math.max(10, Math.min(94, r2)));
+
+    if (!past) {
+      elEv.innerHTML = '<p style="font-size:13.5px;color:var(--text-mute);margin:0">' +
+                       'Month zero. The wiki is freshly written and genuinely good. ' +
+                       'Drag forward.</p>';
+      return;
+    }
+    elEv.innerHTML = EVENTS.filter(function (e) { return e.m <= m; }).map(function (e) {
+      return '<div style="display:flex;gap:11px;align-items:baseline;padding:7px 0;' +
+             'border-bottom:1px solid var(--line-soft);font-size:13.5px">' +
+             '<span style="font-family:var(--mono);font-size:10.5px;color:var(--text-mute);' +
+             'flex:0 0 52px">M' + e.m + '</span>' +
+             '<span style="color:var(--text-dim)">' + e.t + '</span></div>';
+    }).join("");
+  }
+
+  /* ================= INIT ================= */
+  buildTasks();
+  render();
+  slider.addEventListener("input", renderRegimes);
+  renderRegimes();
+})();
+</script>
+</body>
+</html>
