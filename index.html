@@ -179,51 +179,9 @@
 (function () {
   var h = document.getElementById('sheet-handle');
   if (!h) return;
-  var label  = h.querySelector('.txt');
-  var scroll = document.getElementById('d-scroll');
-
-  /* ---- the hint -------------------------------------------------------
-     Pulses only when the scroll region is actually overflowing, stops for
-     good once the control has been used, and expires on its own after a few
-     cycles so it never becomes permanent ambient motion. */
-  var used = false, hintTimer = null, checkTimer = null;
-
-  function clearHint() {
-    h.classList.remove('hint');
-    clearTimeout(hintTimer);
-  }
-
-  function evaluate() {
-    if (used || !scroll) return;
-    if (document.body.classList.contains('reading')) return clearHint();
-    /* the handle is display:none above 820px — no hint on desktop */
-    if (getComputedStyle(h).display === 'none') return clearHint();
-
-    var overflowing = scroll.scrollHeight - scroll.clientHeight > 24;
-    if (!overflowing) return clearHint();
-
-    h.classList.add('hint');
-    clearTimeout(hintTimer);
-    hintTimer = setTimeout(clearHint, 12000);   /* ~5 cycles, then quiet */
-  }
-
-  function scheduleEvaluate() {
-    clearTimeout(checkTimer);
-    checkTimer = setTimeout(evaluate, 320);     /* let the type-in settle */
-  }
-
-  if (scroll && 'MutationObserver' in window) {
-    /* content is rewritten whenever a node is selected, and types in one
-       character at a time — so measure after it stops changing, not during */
-    new MutationObserver(scheduleEvaluate)
-      .observe(scroll, { childList: true, subtree: true, characterData: true });
-  }
-  window.addEventListener('resize', scheduleEvaluate);
-  scheduleEvaluate();
+  var label = h.querySelector('.txt');
 
   h.addEventListener('click', function () {
-    used = true;
-    clearHint();
     var on = document.body.classList.toggle('reading');
     h.setAttribute('aria-expanded', on ? 'true' : 'false');
     label.textContent = on ? 'Collapse' : 'Expand for reading';
