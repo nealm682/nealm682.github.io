@@ -174,6 +174,7 @@ h1 {
   .biz-cta:hover .ar { transform: none; }
   /* reading mode still works, it just arrives instead of sliding */
   .rail, .stage, .sheet-handle .grip { transition: none; }
+  .sheet-handle.hint .grip, .sheet-handle.hint .txt { animation: none; }
 }
 
 /* the reading card — takes every pixel the rail can spare */
@@ -475,6 +476,23 @@ body.lab .hud.lab { display: block !important; }
   }
   .sheet-handle:active .grip { background: var(--skl); width: 44px; }
   .sheet-handle:focus-visible { outline: 2px solid var(--skl); outline-offset: -3px; border-radius: 10px; }
+
+  /* The hint only runs when the scroll region is genuinely overflowing — a
+     control that pulses over content which already fits is telling a lie.
+     It's also on a budget: it stops after a few cycles rather than pulsing
+     at the reader indefinitely. Ambient motion is a budget, not a default. */
+  @keyframes gripPulse {
+    0%, 100% { background: var(--outline); width: 32px;
+               box-shadow: 0 0 0 0 rgba(125, 211, 192, 0); }
+    45%      { background: var(--skl); width: 48px;
+               box-shadow: 0 0 12px 2px rgba(125, 211, 192, .38); }
+  }
+  @keyframes hintGlow {
+    0%, 100% { color: var(--on-surface-dim); }
+    45%      { color: var(--skl); }
+  }
+  .sheet-handle.hint .grip { animation: gripPulse 2.4s ease-in-out infinite; }
+  .sheet-handle.hint .txt  { animation: hintGlow  2.4s ease-in-out infinite; }
 
   .stage { transition: opacity .42s ease; }
 
