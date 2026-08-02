@@ -11,6 +11,7 @@ NM.add([
   body:"I work on <strong>ADP Assist</strong> — ADP's flagship AI assistant — on the team building its agent layer. ADP is a Fortune 500 company, and more than 80% of the Fortune 500 are its clients.\n\nSix years of enterprise conversational and agentic AI before and alongside it: insurance, financial services, and now HR technology.",
   more:"The path here went conversational UX → intent modeling → production chatbot engineering → agent architecture. Each step more technical than the last, and each one built on the one before rather than replacing it.\n\nBut the career has two arcs, and they turned out to converge.\n\nThe first ran 2004–2019: employer benefits strategy, operations leadership, ecommerce direction, and C-suite strategy with P&L ownership. Revenue growth, team building, and a lot of time in rooms with non-technical decision makers.\n\nThe second started in 2020 with a contract role designing conversational UX for financial services, and got progressively more technical from there.\n\nMost AI engineers can't run a stakeholder meeting. Most operators can't ship an agent. The overlap is small, and it is the entire reason I get pulled into ambiguous problems where nobody has written the requirements yet.",
   foot:"ADP Assist · Aetna · Lincoln Financial · Digitel · ABC Water",
+  links:[{label:"Full résumé — dates, titles, achievements", url:"resume/", primary:true}],
   tags:["ADP Assist","Fortune 500","Agent architecture"] },
 
 { id:"skl", kind:"hub", cat:"Skills", label:"Skills",

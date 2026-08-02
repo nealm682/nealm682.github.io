@@ -258,6 +258,11 @@ h1 {
 .golink:hover { background: var(--surface-c-high); }
 .golink .arr { font-size: 11px; opacity: .75; }
 
+/* the filled one — the action you'd most like a visitor to take */
+.golink.primary { font-weight: 600; }
+.golink.primary:hover { filter: brightness(1.1); }
+.golink.primary .arr { opacity: .6; }
+
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; flex: 0 0 auto; }
 .chip {
   font-family: var(--mono); font-size: 9.5px; letter-spacing: .3px;

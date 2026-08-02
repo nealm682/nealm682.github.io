@@ -74,7 +74,9 @@ That's the whole process.
   body:"Short read. Types in character by character.",
   more:"Long read. Blank lines with \\n\\n become paragraphs.",
   foot:"small mono line at the bottom — plain text only, no markup",
-  links:[{label:"See it live", url:"https://..."}],   // optional
+  links:[{label:"See it live", url:"https://...", primary:true}],  // optional
+                    // primary:true renders it filled instead of outlined —
+                    // use at most one per node, for the action you most want taken
   video:"YOUTUBE_ID",                                // optional, see below
   videoLabel:"Caption on the thumbnail",             // optional
   tags:["Chip","Chip","Chip"] }

@@ -838,8 +838,16 @@ function showNode(id, now) {
     a.textContent = l.label;
     var external = /^https?:/i.test(l.url) && l.url.indexOf(location.host) === -1;
     if (external) { a.target = "_blank"; a.rel = "noopener noreferrer"; }
-    a.style.borderColor = hexA(col, 0.38);
-    a.style.color = col;
+    if (l.primary) {
+      /* one filled button per node, for the action you actually want taken */
+      a.className = "golink primary";
+      a.style.background = col;
+      a.style.borderColor = col;
+      a.style.color = "#0e0f13";
+    } else {
+      a.style.borderColor = hexA(col, 0.38);
+      a.style.color = col;
+    }
     a.innerHTML = escapeButBold(l.label) +
       '<span class="arr">' + (external ? "↗" : "→") + "</span>";
     dLinks.appendChild(a);
