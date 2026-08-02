@@ -8,3 +8,10 @@ assets/wiki-graph.mp4
 # OS noise
 .DS_Store
 Thumbs.db
+
+# Internal architecture draft. Contains unresolved commercial and technical
+# questions written for me, not for a client or an employer. GitHub Pages
+# serves everything that gets committed, so keeping it out of the repo is the
+# only thing that actually keeps it private — noindex and an unlinked URL
+# don't. Delete this line when it's ready to be public.
+notes/architecture/
