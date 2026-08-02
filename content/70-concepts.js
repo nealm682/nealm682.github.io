@@ -48,6 +48,18 @@ NM.add([
   links:[{label:"Read the full note", url:"notes/llm-wiki/"}],
   tags:["Knowledge engineering","Obsidian","Compounding artifacts"] },
 
+/* Deliberately NOT a summary of the operating-knowledge page — that story lives
+   on the Approach branch (id "company"). This is the one reusable technique
+   extracted out of it, which is what earns it a slot here rather than a
+   second node saying the same thing. */
+{ id:"inbox", kind:"sub", cat:"Concepts", label:"Append-Only", parent:"cpt",
+  kicker:"Concepts", title:"Many writers, one truth",
+  body:"Sixty people cannot share one working copy of the truth. The fix isn't better locking — it's that nobody edits anything, ever.",
+  more:"The obvious design is a shared folder everyone can write into. It fails immediately, and not for the reason people expect.\n\n<strong>Attribution comes from commits.</strong> Let sixty people edit files in one working copy and the reviewer opens it to find forty modified files with no author, no rationale, and no way to tell which change belongs with which. Worse, a review is only worth doing when it's looking at one coherent proposal. A pile of loose edits isn't reviewable at any level of effort.\n\n<strong>So invert it: nobody edits, everybody creates.</strong> Each proposal is a new file — what the rule is, the case it came from, which page it would amend, who and when. New files never collide, which deletes locking, conflict resolution and last-write-wins in a single move. Attribution is the filename.\n\n<strong>The property I didn't anticipate.</strong> Because the inbox sits outside the repository, only accepted material is ever committed. Rejected proposals — wrong ones, or ones carrying details that shouldn't be kept — are deleted rather than buried in history. Version control is superb at remembering and very bad at forgetting, and this is the seam where you still get to choose.\n\nOne person then merges, which is what turns a concurrency trick into a governance model: <strong>many may propose, one decides what becomes true.</strong>",
+  foot:"Lineage: Maildir's lock-free delivery · append-only logs",
+  links:[{label:"Where this came from — the company version", url:"operating-knowledge/"}],
+  tags:["Concurrency","Governance","Provenance"] },
+
 /* Spec-Driven moved to the Approach branch (id "specs") — it's part of how
    the work gets done, not a side concept, and two nodes saying the same
    thing split the story. */
