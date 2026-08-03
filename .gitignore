@@ -15,3 +15,9 @@ Thumbs.db
 # only thing that actually keeps it private — noindex and an unlinked URL
 # don't. Delete this line when it's ready to be public.
 notes/architecture/
+
+# Learning artifacts. Same reasoning as above — these contain my commercial
+# reading of the research, not just the research. The wiki they're built from
+# (claude-rollout/) IS committed, because it's synthesis of public material.
+# Delete this line to publish them.
+explainers/

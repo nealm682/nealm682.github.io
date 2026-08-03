@@ -788,13 +788,15 @@ svg{display:block;width:100%;height:auto;overflow:visible}
   <div class="eyebrow rv">How it's actually wired</div>
   <h2 class="rv" data-d="1">Almost nobody touches<br />the machinery</h2>
   <p class="rv" data-d="2">Two constraints shape the whole build. Nobody producing work should ever see a repository or learn a developer tool. And nobody producing work should ever be able to edit shared truth directly, because sixty people with write access to the same files produces sixty versions of the truth inside a quarter.</p>
+
+  <p class="rv" data-d="2">Worth being precise here, because it's the difference between a policy and a fact: <strong>the second constraint isn't something we promise to be careful about — the shared library simply cannot be edited by the people it's delivered to.</strong> And where something genuinely must be present on every machine, it can be made impossible to remove. Those are properties of how the tooling is distributed, not house rules somebody has to enforce.</p>
   <p class="rv" data-d="2">Both are satisfied by a single rule: <strong>producers only ever create new files. They never edit existing ones.</strong> Everything else follows from that.</p>
 
-  <div class="tree rv" data-d="2"><span class="c">the whole thing, on a shared drive everyone already has</span>
+  <div class="tree rv" data-d="2"><span class="c">two halves, and only one of them is a folder you have to set up</span>
 
 <span class="d">brokerage-knowledge/</span>
 │
-├── <span class="d">wiki/</span>                      <span class="c">← published · read-only to producers</span>
+├── <span class="d">wiki/</span>                      <span class="c">← delivered to everyone · nobody can edit it</span>
 │   ├── <span class="d">advertising/</span>
 │   │   ├── <span class="f">adre-disclosure.md</span>
 │   │   └── <span class="f">fair-housing-language.md</span>
@@ -802,7 +804,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
 │   ├── <span class="d">vendors/</span>
 │   └── <span class="f">listing-voice.md</span>
 │
-└── <span class="w">inbox/</span>                     <span class="c">← append-only · one new file per deposit</span>
+└── <span class="w">inbox/</span>                     <span class="c">← a shared folder · one new file per deposit</span>
     ├── <span class="f">2026-08-02-dana-expedite-fee.md</span>
     ├── <span class="f">2026-08-02-marco-hoa-signage.md</span>
     └── <span class="f">2026-08-03-dana-photo-turnaround.md</span></div>
@@ -838,14 +840,14 @@ svg{display:block;width:100%;height:auto;overflow:visible}
         <rect x="280" y="90" width="200" height="110" rx="15" fill="url(#lay)" stroke="rgba(56,189,248,.45)"/>
         <text x="380" y="122" class="txt b" text-anchor="middle" style="font-size:13px">wiki/</text>
         <text x="380" y="143" class="txt" text-anchor="middle">the published layer</text>
-        <text x="380" y="160" class="txt" text-anchor="middle">what's currently true</text>
-        <text x="380" y="184" class="lbl hi" text-anchor="middle">read-only</text>
+        <text x="380" y="160" class="txt" text-anchor="middle">delivered to every machine</text>
+        <text x="380" y="184" class="lbl hi" text-anchor="middle">cannot be edited by producers</text>
 
         <!-- inbox -->
         <rect x="520" y="90" width="200" height="110" rx="15" fill="rgba(245,169,127,.07)" stroke="rgba(245,169,127,.45)"/>
         <text x="620" y="122" class="txt b" text-anchor="middle" style="font-size:13px">inbox/</text>
         <text x="620" y="143" class="txt" text-anchor="middle">proposals, one file each</text>
-        <text x="620" y="160" class="txt" text-anchor="middle">outside the repository</text>
+        <text x="620" y="160" class="txt" text-anchor="middle">a shared folder, outside the record</text>
         <text x="620" y="184" class="lbl" text-anchor="middle" style="fill:#f5a97f">append-only</text>
 
         <!-- admin -->
@@ -880,9 +882,9 @@ svg{display:block;width:100%;height:auto;overflow:visible}
       </svg>
     </div>
     <div class="fig-cap">
-      Producers see one folder. They read from the left half and drop proposals into the right half, and
-      that is the entire extent of their involvement. Everything to the right of the inbox is invisible
-      to them and always will be.
+      A producer reads from the left half and drops proposals into the right half. That is the entire
+      extent of their involvement — everything past the inbox is invisible to them and always will be.
+      The left half arrives on its own; the right half is the one piece of plumbing that has to be set up.
     </div>
   </div>
 
@@ -900,8 +902,8 @@ svg{display:block;width:100%;height:auto;overflow:visible}
       <p>Because each accepted proposal became its own coherent commit, there's a real diff to look at — what changed, why, sourced to a specific case. That's a review anyone can do. A pile of loose edits in a shared folder is not.</p>
     </div>
     <div class="stp">
-      <h3>It publishes back</h3>
-      <p>The updated wiki folder syncs out. Every producer's next task reads the new version. A rule that lived in one person's head is now applied by everyone, and nobody attended a meeting about it.</p>
+      <h3>It reaches everyone, automatically</h3>
+      <p>Accepting the change <em>is</em> the release — there is no separate step where somebody remembers to distribute it. Every producer has the new version by their next task. A rule that lived in one person's head is now applied by sixty people, and nobody attended a meeting about it.</p>
     </div>
   </div>
 
@@ -913,7 +915,7 @@ svg{display:block;width:100%;height:auto;overflow:visible}
     </div>
     <div class="card live">
       <h3><span class="pip l"></span>Two roles, two different tools</h3>
-      <p>Producers get a desktop agent pointed at a folder — no repository, no accounts, nothing to learn. The reviewers get a developer-grade agent that can read history, write commits and manage the repository. Same knowledge, two entirely different surfaces, matched to who's actually sitting there.</p>
+      <p>Producers get a desktop agent with the firm's library already installed — no repository, no accounts, nothing to set up, and nothing they could break. The reviewers get a developer-grade agent that can read history, write commits and manage the repository. Same knowledge, two entirely different surfaces, matched to who's actually sitting there.</p>
       <p style="margin-top:10px"><strong>Two people hold that second role, not one.</strong> A primary who works the queue and a backup who can cover a holiday, an illness, or a resignation. One reviewer is a single point of failure sitting directly on top of the thing you paid to build.</p>
     </div>
   </div>
@@ -998,14 +1000,15 @@ svg{display:block;width:100%;height:auto;overflow:visible}
     <div class="card">
       <h3><span class="pip a"></span>Where does our information go?</h3>
       <p>This is the right first question, particularly if you're in a regulated field where client information carries obligations beyond your own preferences.</p>
-      <p style="margin-top:12px">The principle: your operating knowledge lives in your systems, in plain readable files you can open without me or any vendor. What gets connected, what's excluded, retention, and whether anything can be used to train anything are settled explicitly in the agreement before connection — not assumed, and not left to a default setting somebody didn't read.</p>
+      <p style="margin-top:12px">The principle: your operating knowledge is plain readable text, in a repository your company owns, that stays legible if every tool involved disappears tomorrow. What gets connected, what's excluded, retention, and whether anything can be used to train anything are settled explicitly in the agreement before connection — not assumed, and not left to a default setting somebody didn't read.</p>
+      <p style="margin-top:12px">Being exact about one thing a technical reader will ask: the knowledge is yours and sits in your repository, but <em>delivering</em> it to sixty people and connecting to your other systems does route through the vendor's infrastructure rather than your local network. That's a normal arrangement and it is not the same as "nothing leaves the building" — so it belongs in the data-flow document, in writing, rather than in a reassuring sentence.</p>
       <p style="margin-top:12px">If you have an existing security review or a compliance officer, they're in that conversation from the start rather than at the end.</p>
     </div>
     <div class="card">
       <h3><span class="pip a"></span>What do we own if we stop?</h3>
       <p>All of it, unconditionally. The extracted knowledge is your company's knowledge — I'd have no defensible claim to it and wouldn't want one.</p>
       <p style="margin-top:12px">There's a practical reason beyond the ethical one. The entire input to this process is people being candid about how they actually work. Any ambiguity about who ends up owning that shuts the candor down, and the candor is the whole product.</p>
-      <p style="margin-top:12px">Plain files, your systems, readable without any tool of mine. If you stop, you keep a documented company.</p>
+      <p style="margin-top:12px">Plain text, your repository, readable without any tool of mine. If you stop, you keep a documented company.</p>
     </div>
   </div>
 
