@@ -11,11 +11,15 @@ authority: first-party product documentation
 
 # Snapshot — key passages
 
-Verbatim, from the section **"Where you can use plugins"**:
+Verbatim, from the section "Where you can use plugins". **Emphasis is never added inside quoted
+material in this file** — anything that looks like markup below is the source's own:
 
 > "You can install and use plugins in chat on the web, the Chat tab in Claude Desktop, and Claude
-> Cowork. The skills bundled in a plugin work across all three. **Hooks and sub-agents run only in
-> Cowork, so they appear grayed out in chat.**"
+> Cowork. The skills bundled in a plugin work across all three. Hooks and sub-agents run only in
+> Cowork, so they appear grayed out in chat."
+
+*(The sentence that matters is the third one. Noting that here rather than bolding it inside the
+quote, so the quoted text stays byte-comparable against the source.)*
 
 On what a plugin is:
 

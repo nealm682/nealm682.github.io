@@ -27,6 +27,8 @@ wall is what's worth knowing.
    - `moderate` — two, or one with substantial detail
    - `weak` — single source, or a secondary/marketing source
    - `unverified` — retrieved as a search summary only, page never snapshotted
+   - `definitional` — defines a term rather than reporting a finding. Any factual claim inside it
+     still carries its own citation; the definition itself does not.
 3. **Never delete a fact.** Superseded claims move to `## History` with the date and what replaced them.
 4. **Attribute to the handle**, not to "someone said". The handle is what makes it checkable.
 5. **Mark time-sensitivity.** This tooling changes monthly. Any claim about what a product can or

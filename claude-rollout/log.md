@@ -52,3 +52,23 @@ Review queue: 1 item downgraded, 2 added.
 
 **Standing caveat carried forward.** Hooks existing is not hooks *blocking*. The offering may not
 describe compliance as guaranteed until a blocking hook is demonstrated end to end.
+
+## [2026-08-03] define | harness
+
+Added [[wiki/concepts/harness]] after Neal asked whether "harness" meant Claude Code or Codex — a
+sign the term was doing work in my writing without being pinned down anywhere.
+
+**The finding worth keeping:** the word appears **zero times** across all three snapshots — 25
+practitioners and two documentation pages. The concept is everywhere; the label is mine. Others reach
+for "scaffolding", or describe it functionally (`Such_Independent_234`: "Constrain agents through
+tools, environment, and code organization"), or just name the product. Distinctive vocabulary I own,
+and vocabulary that buys no recognition — both are true and the page says so.
+
+Also resolved, retroactively: **"Cowork or Claude Code?" was the wrong question.** Both are harnesses
+and both score high on every capability row. The real variable is who is sitting there. Chat is the
+surface that actually fails, because it cannot enforce anything.
+
+Schema updated: added a `definitional` strength grade for pages that define a term rather than report
+a finding. Factual claims inside such a page still carry their own citations.
+
+Pages created: 1. Pages updated: 2 (CLAUDE.md, index.md).

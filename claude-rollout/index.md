@@ -40,6 +40,7 @@ Start with [[overview]]. Open items live in [[review-queue]].
 
 | Page | Strength | One line |
 |---|---|---|
+| [[wiki/concepts/harness]] | definitional | The software around the model that gives it hands — a category, not a product |
 | [[wiki/concepts/deterministic-vs-advisory]] | moderate | "A context file is a suggestion but a linter is a wall" |
 | [[wiki/concepts/coordination-overhead]] | moderate | When production gets cheap, contention becomes the constraint |
 | [[wiki/concepts/decision-supersession-gap]] | weak | Skills record what is true, not what stopped being true |

@@ -11,6 +11,10 @@ authority: first-party product documentation
 
 # Snapshot — key passages
 
+**Emphasis inside quoted material below is the source's own** — the help centre renders these as bold
+and the fetch preserved it. Nothing here has been emphasised by me; a quotation that isn't
+byte-comparable to its source isn't a snapshot.
+
 Who and where:
 
 > "Plugin marketplaces allow Team and Enterprise plan owners to distribute curated plugins to
